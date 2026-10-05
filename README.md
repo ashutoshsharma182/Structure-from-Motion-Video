@@ -31,8 +31,8 @@ python reconstruct.py --frames data/my_video --out outputs/my_video
 
 Each output folder contains:
 - `pointcloud_360.mp4`: a video orbiting the reconstruction.
-- `points.ply`: the coloured point cloud, for MeshLab or CloudCompare.
+- `points.ply`: the coloured point cloud.
 
-**Capturing your own video.** Walk sideways or around the object; turning on the spot gives no depth. Keep the scene static and textured. Choose `--fps` so that consecutive frames clearly differ but still overlap. For slow hand-held motion, 2–3 fps works.
+**Capturing your own video.** Walk sideways or around the object, keeping the camerea facing the object. Rotating the camera on its axis gives no depth. Keep the scene static and object textured. Choose `--fps` so that consecutive frames clearly differ but still overlap. For slow hand-held motion, 2–3 fps works.
 
 **Limitation**: It is not possible to recover the absolute scale of the scene, only relative.
