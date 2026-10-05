@@ -11,7 +11,7 @@ Pipeline:
 - Refine all camera poses jointly with Bundle Adjustment (minimise reprojection error)
 - Export the coloured point cloud (.ply) for viewing in MeshLab / Open3D
 
-| Input video | Feature matches |
+| Input video | Output 3D point cloud |
 |:-----------:|:---------------:|
 | ![input](assets/my_video_gif.gif) | ![matches](assets/output_gif.gif) |
 
