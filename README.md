@@ -3,15 +3,12 @@
 Turns a video taken with a single moving camera into a **coloured 3D point cloud**.
 
 Pipeline:
-- Divide video into snapshots at 2fps
-- Detect keypoints and descriptors in each frame (SIFT)
-- Match features between consecutive frames (ratio test to drop ambiguous matches)
+- Divide video into snapshots at 2 frames per second
+- Detect keypoints in first two frames using SIFT and match correspondences
 - Estimate the Essential matrix with RANSAC to reject outlier matches
-- Recover relative camera pose (R, t) from the Essential matrix
-- Triangulate matched points to get initial 3D points
-- Register each new frame with PnP + RANSAC against existing 3D points, then triangulate new points
-- Refine all camera poses and 3D points jointly with Bundle Adjustment (minimise reprojection error)
-- Colour each 3D point by sampling its pixel colour from the source frames
+- Given image points (x) and Essential matrix (P), triangulate matched points (X) to get initial 3D points (x = PX)
+- Register each new view with PnP + RANSAC against existing 3D points, then triangulate new points
+- Refine all camera poses jointly with Bundle Adjustment (minimise reprojection error)
 - Export the coloured point cloud (.ply) for viewing in MeshLab / Open3D
 
 | Input video | Feature matches |
