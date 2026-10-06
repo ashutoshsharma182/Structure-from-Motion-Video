@@ -9,7 +9,7 @@ Pipeline:
 - Given image points (x) and Essential matrix (P), triangulate matched points (X) to get initial 3D points (x = PX)
 - Register each new view with PnP + RANSAC against existing 3D points, then triangulate new points
 - Refine all camera poses jointly with Bundle Adjustment (minimise reprojection error)
-- Export the coloured point cloud (.ply) for viewing in MeshLab / Open3D
+- Export the coloured point cloud (.ply) and video (.mp4)
 
 | Input video | Output 3D point cloud |
 |:-----------:|:---------------:|
